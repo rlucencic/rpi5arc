@@ -158,8 +158,8 @@ static bool start(void)
     if (!rom_store_load(settings.os, s_rom_copy, &rom_size, &s_rom_name)) {
         static char text[1400];
         static const char *const files[] = { "arthur120.rom", "riscos200.rom", "riscos311.rom" };
-        snprintf(text, sizeof(text), "No %s ROM: copy it into %s/roms (as %s, or any name).", os_names[settings.os],
-                 emu_data_dir(), files[settings.os]);
+        snprintf(text, sizeof(text), "No %s ROM: copy it into %s (as %s, or any name).", os_names[settings.os],
+                 emu_rom_dir(), files[settings.os]);
         emu_set_message(text);
         return false;
     }
@@ -513,7 +513,7 @@ static bool disc_create(const char *path, uint32_t bytes)
 }
 
 static const disks_config_t disks = {
-    .folder = "floppies",
+    .folder = "arc",
     .extensions = extensions,
     .description = "Disc images (.ADF, .ADL, .IMG; .HDF the A3020's hard disc)",
     .title = "Discs",

@@ -134,7 +134,7 @@ cmake -S . -B build -G Ninja && cmake --build build
 ### 3. ROMs
 
 Arthur 1.20's or RISC OS 2.00's (512 KB) or RISC OS 3.11's (2 MB) in the
-data folder's `roms/` (`~/rpi5emu/roms`), under any name (esp32arc's:
+data folder's `arc/roms/` (`~/rpi5emu/arc/roms`), under any name (esp32arc's:
 `arthur120.rom`, `riscos200.rom`, `riscos311.rom`): found by what it holds.
 Not part of this repository.
 
@@ -142,7 +142,7 @@ Not part of this repository.
 
 1. `build/rpi5arc`: the setup screen opens in a window.
 2. Choose the model and click **Start**.
-3. Put images into `~/rpi5emu/floppies/`, drop them on the window or the web page, and
+3. Put images into `~/rpi5emu/arc/`, drop them on the window or the web page, and
    insert them on the setup screen's **Disks** page.
 
 ## Using it
@@ -161,7 +161,7 @@ Not part of this repository.
 | Give the A3020 a hard disc | Web page: a new blank disc of 40, 81 or 162 MB, **Insert into… → IDE disc** |
 | Get a command line | F12 in the RISC OS desktop |
 
-Images live in `~/rpi5emu/floppies/`, settings in `~/.config/rpi5emu/settings.ini`; the
+Images live in `~/rpi5emu/arc/`, settings in `~/.config/rpi5emu/settings.ini`; the
 inserted images are remembered across starts. `build/rpi5arc --help` lists the options.
 
 **Keyboard**: by position, as on the Archimedes' UK keyboard. Alt is Alt
@@ -187,7 +187,7 @@ flowchart LR
   EMU -- picture --> WIN
   EMU -- sound --> SND[SDL audio]
   WIN -- keys · mouse --> EMU
-  DATA[("~/rpi5emu<br>roms · floppies")]
+  DATA[("~/rpi5emu<br>arc · arc/roms")]
   EMU <--> DATA
   WEB <--> DATA
 ```

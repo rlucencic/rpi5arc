@@ -12,7 +12,7 @@ glue.
 |---|---|
 | `src/main.c` | The Archimedes as an `emu_machine_t`: esp32arc's `main/main.c` through `../rpi5emu/tools/port_glue.py` and `port_finish.py`, then by hand: RAM and ROM on ARM2 pages by `posix_memalign()`, the picture copier a thread (a semaphore for the task notification), the console's `C` frame timing in nanoseconds (reported as a 1 GHz clock's cycles), the ROM message, `shutdown()` saves the CMOS RAM and writes the discs back |
 | `src/settings.c` | esp32arc's, over `emu/nvs.h` (section `arc`, each model's and OS's CMOS RAM as hex) |
-| `src/rom_store.c` | A file in `~/rpi5emu/roms/` of the OS's ROM size (or up to 16 bytes more: Arthur's images) that holds it (any name) |
+| `src/rom_store.c` | A file in `~/rpi5emu/arc/roms/` (`emu_rom_dir()`) of the OS's ROM size (or up to 16 bytes more: Arthur's images) that holds it (any name) |
 
 Keep `src/main.c` in step with esp32arc's `main/main.c`.
 

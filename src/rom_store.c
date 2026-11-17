@@ -17,7 +17,7 @@ static bool is_os(arc_os_t os, const uint8_t *buf)
     return arc_rom_identify(buf, sizes[os], &found, s_name, sizeof(s_name)) != NULL && found == os;
 }
 
-/* Any file in the data folder's roms/ of the size that holds the OS
+/* Any file in the machine's roms/ folder of the size that holds the OS
  * (Arthur's images often have a byte too many: those too)
  */
 bool rom_store_load(arc_os_t os, uint8_t *buf, uint32_t *size, const char **name)
@@ -26,7 +26,7 @@ bool rom_store_load(arc_os_t os, uint8_t *buf, uint32_t *size, const char **name
         return false;
     }
     char folder[1200];
-    snprintf(folder, sizeof(folder), "%s/roms", emu_data_dir());
+    snprintf(folder, sizeof(folder), "%s", emu_rom_dir());
     DIR *dir = opendir(folder);
     if (dir == NULL) {
         return false;
