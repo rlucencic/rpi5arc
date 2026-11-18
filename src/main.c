@@ -1,8 +1,8 @@
 /*
- * Acorn Archimedes emulator on the Raspberry Pi 5.
+ * Acorn Archimedes emulator with SDL 3.
  *
  * The Pi's side (window, sound, keyboard, setup screen, web page, console,
- * settings, the data folder) is the shared runtime in ../rpi5emu, the
+ * settings, the data folder) is the shared runtime in ../sdlemu, the
  * machine esp32arc's; this file plugs the Archimedes into it, as
  * esp32arc's main/main.c does on the boards (and mostly is that file):
  * memory, ROM, settings, CMOS RAM, keyboard map, mouse and touch,
